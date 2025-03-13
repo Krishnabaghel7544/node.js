@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="css/adminpanel.css">
+</head>
+<body>
+  <!-- Main Wrapper -->
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h2>Admin Panel</h2>
+      </div>
+      <ul class="nav-links">
+        <li><a href="viewuser">Users</a></li>
+        <li><a href="viewcontact">Contact</a></li>
+        <li><a href="viewproduct">vierwproduct</a></li>
+        <li><a href="vieworder">vieworder</a></li>
+        <li><a href="setting">Settings</a></li>
+        <li><a href="#alogo">Logout</a></li>
+      </ul>
+    </div>
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header -->
+      <div class="header">
+        <table>
+<tr>
+<th>Name</th>
+<th>Email </th>
+<th>phone</th>
+<th>message</th>
+</tr>
+
+<% data.forEach((entry)=>
+{
+%>
+<tr>
+<td><%= entry.Name %></td>
+<td><%= entry.Email %></td>
+<td><%= entry.Phone %></td>
+<td><%= entry.Message %></td>
+<td><a href="deluser?email=<%=entry.email %>">Delete </a></td>
+</tr>
+
+<%});%>
+
+</table>
+      </div>
+
+</div>    
+</body>
